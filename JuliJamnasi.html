@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Juli Jamnasi Sp.Onk.Rad (K) - Dokter Spesialis Onkologi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6a0dad; /* Ungu utama */
+            --primary-dark: #4b0082;
+            --primary-light: #9370db;
+            --secondary-color: #f0e6ff;
+            --text-color: #333;
+            --light-text: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(106, 13, 173, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .logo-subtext {
+            font-size: 14px;
+            color: var(--light-text);
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border-radius: 0 0 30px 30px;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .doctor-photo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 8px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: var(--white);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-light);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-dark);
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .timeline {
+            margin-top: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--secondary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(106, 13, 173, 0.2);
+        }
+
+        .service-icon {
+            background-color: var(--primary-light);
+            color: var(--white);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .contact-icon {
+            background-color: var(--primary-light);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+        }
+
+        .contact-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            margin-top: 15px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+
+        /* Schedule Section */
+        .schedule {
+            background-color: var(--secondary-color);
+        }
+
+        .schedule-table {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .schedule-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-row:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-day, .schedule-time {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .schedule-day {
+            background-color: var(--primary-light);
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .schedule-time {
+            font-size: 18px;
+        }
+
+        .location {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+            color: var(--light-text);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact {
+            margin: 30px 0;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-container, .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-content {
+                order: 2;
+                text-align: center;
+            }
+            
+            .hero-image {
+                order: 1;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .service-card, .contact-card {
+                padding: 25px;
+            }
+            
+            .schedule-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+            
+            .hero-content h1 {
+                font-size: 30px;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+                <div>
+                    <div class="logo-text">Dr. Juli Jamnasi</div>
+                    <div class="logo-subtext">Sp.Onk.Rad (K) - Dokter Spesialis Onkologi</div>
+                </div>
+            </div>
+            <div class="header-contact">
+                <a href="https://wa.me/62816309346" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Dr. Juli Jamnasi Sp.Onk.Rad (K)</h1>
+                <p>Dokter Spesialis Onkologi dengan pengalaman 14 tahun di bidang klinis onkologi, ahli dalam Radioterapi, Brachiterapi, dan Kemoterapi, serta konsultan paliatif untuk perawatan kanker yang komprehensif.</p>
+                <a href="#contact" class="btn">Hubungi untuk Konsultasi</a>
+            </div>
+            <div class="hero-image">
+                <img src="jamnasi.jpeg" alt="Dr. Juli Jamnasi Sp.Onk.Rad (K)" class="doctor-photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Profil Dokter</h2>
+                <p>Pengalaman dan kualifikasi profesional dalam penanganan kanker</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Spesialis Onkologi dengan 14 Tahun Pengalaman</h3>
+                    <p>Saya adalah dokter spesialis onkologi yang telah berkecimpung di dunia onkologi sejak 14 tahun yang lalu. Saya ahli dalam clinical onkologi baik dalam tindakan Radioterapi/Brachiterapy,kemoterapi maupun Tergeted terapi.</p>
+                    <p>Saya berkomitmen untuk memberikan perawatan kanker yang komprehensif dan berbasis bukti, dengan fokus pada kenyamanan dan kualitas hidup pasien.</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2012 - Sekarang</div>
+                            <div class="timeline-desc">Praktik sebagai dokter spesialis onkologi</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2012</div>
+                            <div class="timeline-desc">Adv Tech (France)</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2014</div>
+                            <div class="timeline-desc">Brachiterapy (UKSH, Germany)</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2015</div>
+                            <div class="timeline-desc">Menyelesaikan Course Palliative Care (Singapore)</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2020</div>
+                            <div class="timeline-desc">Menjadi konsultan onkologi</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-services">
+                    <h3>Layanan yang Ditawarkan</h3>
+                    <ul style="list-style-type: none; margin-top: 20px;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                            <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i>
+                            Konsultasi mengenai kanker dan terapi
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                            <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i>
+                            Deteksi dini dan skrining kanker
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                            <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i>
+                            Tindakan Kemoterapi/targeted terapi
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                            <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i>
+                            Tindakan Radioterapi/Brachiterapi
+                        </li>
+                        <li style="padding: 10px 0;">
+                            <i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 10px;"></i>
+                            Perawatan paliatif dan suportif
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Khusus</h2>
+                <p>Penanganan kanker yang komprehensif dan terpersonalisasi</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Konsultasi Onkologi</h3>
+                    <p>Konsultasi mendalam mengenai diagnosis kanker, pilihan terapi, dan rencana perawatan yang sesuai dengan kondisi pasien.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Deteksi Dini Kanker</h3>
+                    <p>Skrining dan deteksi dini berbagai jenis kanker untuk diagnosis tepat waktu dan peluang kesembuhan yang lebih baik.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Kemoterapi</h3>
+                    <p>Pemberian terapi kemoterapi yang tepat sesuai jenis dan stadium kanker, dengan monitoring efek samping secara ketat.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-radiation"></i>
+                    </div>
+                    <h3>Radioterapi/Brachiterapi</h3>
+                    <p>Terapi radiasi yang tepat sasaran untuk mengobati kanker dengan minimal efek pada jaringan sehat sekitarnya.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Perawatan Paliatif</h3>
+                    <p>Perawatan suportif untuk meningkatkan kualitas hidup pasien kanker melalui manajemen gejala dan dukungan psikososial.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Pemantauan Lanjutan</h3>
+                    <p>Pemantauan berkala setelah perawatan untuk mendeteksi kekambuhan dini dan mengelola efek jangka panjang terapi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Saya</h2>
+                <p>Jadwalkan konsultasi atau tanyakan informasi lebih lanjut</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p class="contact-info">0816 309 346</p>
+                    <a href="https://wa.me/62816309346" class="btn whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Kirim Pesan WhatsApp
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p class="contact-info">Jamnasi@gmail.com</p>
+                    <p class="contact-info">julijamnasi@yahoo.com</p>
+                    <a href="mailto:Jamnasi@gmail.com" class="btn">
+                        <i class="fas fa-envelope"></i> Kirim Email
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Lokasi Praktek</h3>
+                    <p class="contact-info">RS Regina Maris</p>
+                    <p class="contact-info">Senin, Selasa, Kamis, Jumat</p>
+                    <p class="contact-info">15:00 - 17:00 WIB</p>
+                    <a href="#schedule" class="btn">
+                        <i class="fas fa-calendar-alt"></i> Lihat Jadwal Lengkap
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule" id="schedule">
+        <div class="container">
+            <div class="section-title">
+                <h2>Jadwal Praktek</h2>
+                <p>Jadwal konsultasi di RS Regina Maris</p>
+            </div>
+            <div class="schedule-table">
+                <div class="schedule-row">
+                    <div class="schedule-day">Senin</div>
+                    <div class="schedule-time">15:00 - 17:00 WIB</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-day">Selasa</div>
+                    <div class="schedule-time">15:00 - 17:00 WIB</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-day">Rabu</div>
+                    <div class="schedule-time">Tidak Praktek</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-day">Kamis</div>
+                    <div class="schedule-time">15:00 - 17:00 WIB</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-day">Jumat</div>
+                    <div class="schedule-time">15:00 - 17:00 WIB</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="schedule-day">Sabtu & Minggu</div>
+                    <div class="schedule-time">Tidak Praktek</div>
+                </div>
+            </div>
+            <div class="location">
+                <p><i class="fas fa-hospital"></i> RS Regina Maris</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Dr. Juli Jamnasi Sp.Onk.Rad (K)</div>
+                <p>Dokter Spesialis Onkologi dengan pengalaman 14 tahun, ahli dalam Radioterapi/ Brachiterapy, Kemoterapi, dan Perawatan Paliatif.</p>
+                
+                <div class="footer-contact">
+                    <p><i class="fas fa-phone-alt"></i> 0816 309 346</p>
+                    <p><i class="fas fa-envelope"></i> Jamnasi@gmail.com | julijamnasi@yahoo.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> RS Regina Maris</p>
+                </div>
+                
+                <a href="https://wa.me/62816309346" class="btn">
+                    <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+                </a>
+                
+                <div class="copyright">
+                    &copy; 2023 Dr. Juli Jamnasi Sp.Onk.Rad (K). Semua hak dilindungi.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling untuk navigasi internal
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission simulation (if added in future)
+        const contactButtons = document.querySelectorAll('.btn');
+        contactButtons.forEach(button => {
+            if(button.textContent.includes('WhatsApp')) {
+                button.addEventListener('click', function(e) {
+                    if(!this.href.includes('wa.me')) {
+                        e.preventDefault();
+                        alert('Mengarahkan ke WhatsApp... Nomor: 0816 309 346');
+                        window.open('https://wa.me/62816309346', '_blank');
+                    }
+                });
+            }
+        });
+        
+        // Highlight current section on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('header a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if(pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
